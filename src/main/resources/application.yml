@@ -1,0 +1,5 @@
+marvel:
+  api:
+    urlprincipal: https://gateway.marvel.com/v1/public/characters
+    apikey: f48674cfca69ec79b9d51e5be998a2ad
+    hash: 0d28aa33d737ad5b0a5eba728a6686a1
