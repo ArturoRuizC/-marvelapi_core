@@ -11,12 +11,10 @@ public class MarvelAPIService {
 	private MarvelAPIClient client;
 
 	public Object consultaHeroe(Integer idHeroe) {
-		Object heroe = client.getCharacterById(idHeroe);
-		return heroe;
+		return client.getCharacterById(idHeroe);
 	}
 
 	public Object listarHeroes() {
-		Object heroes = client.getCharacters();
-		return heroes;
+		return client.getCharacters();
 	}
 }
