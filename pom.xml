@@ -11,8 +11,8 @@
 	<repositories>
 		<repository>
 			<id>github</id>
-			<name>GitHub OWNER Maven Packages</name>
-			<url>https://maven.pkg.github.com/OWNER/REPO</url>
+			<name>GitHub ArturoRuizC Maven Packages</name>
+			<url>https://maven.pkg.github.com/ArturoRuizC/marvel-api-core</url>
 		</repository>
 	</repositories>
 
