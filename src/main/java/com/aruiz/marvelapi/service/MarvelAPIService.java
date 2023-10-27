@@ -1,7 +1,9 @@
 package com.aruiz.marvelapi.service;
 
+import org.springframework.stereotype.Component;
 import com.aruiz.marvelapi.client.MarvelAPIClient;
 
+@Component
 public class MarvelAPIService {
 
 	private MarvelAPIClient client;
