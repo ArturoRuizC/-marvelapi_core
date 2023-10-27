@@ -3,15 +3,17 @@ package com.aruiz.marvelapi.client;
 import org.springframework.web.client.RestTemplate;
 import org.springframework.web.util.UriComponentsBuilder;
 import com.aruiz.marvelapi.util.Const;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 
 @Component
 public class MarvelAPIClient {
 
-	@Autowired
-	private RestTemplate restTemplate;
+    private final RestTemplate restTemplate;
+
+    public MarvelAPIClient(RestTemplate restTemplate) {
+        this.restTemplate = restTemplate;
+    }
 
 	@Value("${marvel.api.urlprincipal}")
 	private String url;
