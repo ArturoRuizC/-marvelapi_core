@@ -1,11 +1,30 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 	<modelVersion>4.0.0</modelVersion>
-	<groupId>com.openpay.marvel.characters</groupId>
-	<artifactId>marvel_characters_core</artifactId>
+	<groupId>com.openpay.marvelapi</groupId>
+	<artifactId>marvel-api-core</artifactId>
 	<packaging>jar</packaging>
 	<version>1.0-SNAPSHOT</version>
-	<name>marvel_characters_core</name>
+	<name>marvel-api-core</name>
 	<url>http://maven.apache.org</url>
+
+	<!-- Configuración para GitHub Packages - Repositorios -->
+	<repositories>
+		<repository>
+			<id>github</id>
+			<name>GitHub OWNER Maven Packages</name>
+			<url>https://maven.pkg.github.com/OWNER/REPO</url>
+		</repository>
+	</repositories>
+
+	<!-- Configuración para GitHub Packages - Distribución -->
+	<distributionManagement>
+		<repository>
+			<id>github</id>
+			<name>GitHub OWNER Maven Packages</name>
+			<url>https://maven.pkg.github.com/OWNER/REPO</url>
+		</repository>
+	</distributionManagement>
+
 	<dependencies>
 		<dependency>
 			<groupId>junit</groupId>
