@@ -1,4 +1,4 @@
-package com.openpay.marvelapi.util;
+package com.aruiz.marvelapi.util;
 
 public class Const {
 

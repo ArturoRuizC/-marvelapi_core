@@ -1,8 +1,8 @@
-package com.openpay.marvelapi.client;
+package com.aruiz.marvelapi.client;
 
 import org.springframework.web.client.RestTemplate;
 import org.springframework.web.util.UriComponentsBuilder;
-import com.openpay.marvelapi.util.Const;
+import com.aruiz.marvelapi.util.Const;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 

@@ -1,6 +1,6 @@
-package com.openpay.marvelapi.service;
+package com.aruiz.marvelapi.service;
 
-import com.openpay.marvelapi.client.MarvelAPIClient;
+import com.aruiz.marvelapi.client.MarvelAPIClient;
 
 public class MarvelAPIService {
 
