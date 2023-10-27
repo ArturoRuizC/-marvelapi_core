@@ -1,10 +1,10 @@
 package com.aruiz.marvelapi.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 import com.aruiz.marvelapi.client.MarvelAPIClient;
 
-@Component
+@Service
 public class MarvelAPIService {
 
 	@Autowired
