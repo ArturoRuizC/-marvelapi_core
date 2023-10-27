@@ -7,7 +7,6 @@
 	<name>marvel-api-core</name>
 	<url>http://maven.apache.org</url>
 
-	<!-- Configuración para GitHub Packages - Repositorios -->
 	<repositories>
 		<repository>
 			<id>github</id>
@@ -16,7 +15,6 @@
 		</repository>
 	</repositories>
 
-	<!-- Configuración para GitHub Packages - Distribución -->
 	<distributionManagement>
 		<repository>
 			<id>github</id>
@@ -55,4 +53,18 @@
 			<scope>test</scope>
 		</dependency>
 	</dependencies>
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>3.8.1</version>
+				<configuration>
+					<source>11</source>
+					<target>11</target>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
 </project>
