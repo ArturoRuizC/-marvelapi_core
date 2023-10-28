@@ -38,7 +38,7 @@ public class MarvelAPIClient {
 	@Value("${marvel.api.segmentObject}")
 	private String segmentObject;
 
-	public Object getCharacters() {
+	public CharacterDataWrapper getCharacters() {
 		UriComponentsBuilder builder = 	UriComponentsBuilder.fromOriginHeader(url)
 				.pathSegment(segmentVersion)
 				.pathSegment(segmentAcces)
@@ -53,13 +53,13 @@ public class MarvelAPIClient {
 			response = restTemplate.getForObject(endpoint, CharacterDataWrapper.class);
 			log.info(Const.RESPONSE_LABEL + response.toString());
 		} catch (Exception e) {
-			log.error(Const.ERR_REQ_CHARACTERS + endpoint + Const.SPACE + response != null ? response.toString() : Const.EMPTY + Const.SPACE + e.getMessage());
-			log.error(Const.ERR_REQ_CHARACTERS + endpoint + Const.SPACE + response != null ? response.toString() : Const.EMPTY + Const.SPACE + e.getCause());
+			e.printStackTrace();
 		}
+		response.setUrlRequest(endpoint);
 		return response;
 	}
 
-	public Object getCharacterById(Integer idCharacter) {
+	public CharacterDataWrapper getCharacterById(Integer idCharacter) {
 		UriComponentsBuilder builder = 	UriComponentsBuilder.fromOriginHeader(url)
 				.pathSegment(segmentVersion)
 				.pathSegment(segmentAcces)
@@ -69,16 +69,15 @@ public class MarvelAPIClient {
 				.queryParam(Const.APIKEY_LABEL, apikey)
 				.queryParam(Const.HASH_LABEL, hash);
 		String endpoint = builder.toUriString();
-		
 		CharacterDataWrapper response = new CharacterDataWrapper();
 		try {
 			log.info(Const.REQUEST_LABEL + endpoint);
 			response = restTemplate.getForObject(endpoint, CharacterDataWrapper.class);
 			log.info(Const.RESPONSE_LABEL + response.toString());
 		} catch (Exception e) {
-			log.error(Const.ERR_REQ_CHARACTERS + endpoint + Const.SPACE + response != null ? response.toString() : Const.EMPTY + Const.SPACE + e.getMessage());
-			log.error(Const.ERR_REQ_CHARACTERS + endpoint + Const.SPACE + response != null ? response.toString() : Const.EMPTY + Const.SPACE + e.getCause());
+			e.printStackTrace();
 		}
+		response.setUrlRequest(endpoint);
 		return response;
 	}
 }

@@ -9,8 +9,6 @@ public class Const {
 	public static final String 		SLASH = "/";
 	public static final String 		REQUEST_LABEL = "Request: ";
 	public static final String 		RESPONSE_LABEL = "Response: ";
-	public static final String 		ERR_REQ_CHARACTERS = "Error al consultar el servicio: ";
 	public static final String 		SPACE = " ";
 	public static final String 		EMPTY = "";
-	public static final int 		CODE_200 = 200;
 }
