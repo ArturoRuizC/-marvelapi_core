@@ -2,6 +2,7 @@ package com.aruiz.marvelapi.client;
 
 import org.springframework.web.client.RestTemplate;
 import org.springframework.web.util.UriComponentsBuilder;
+import com.aruiz.marvelapi.interfaces.IMarvelAPIClient;
 import com.aruiz.marvelapi.model.CharacterDataWrapper;
 import com.aruiz.marvelapi.util.Const;
 import lombok.extern.slf4j.Slf4j;
@@ -9,16 +10,12 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 
-@Component
 @Slf4j
-public class MarvelAPIClient {
+@Component
+public class MarvelAPIClient implements IMarvelAPIClient{
 
-    private final RestTemplate restTemplate;
-
-    @Autowired
-    public MarvelAPIClient(RestTemplate restTemplate) {
-        this.restTemplate = restTemplate;
-    }
+	@Autowired
+    private RestTemplate restTemplate;
 
 	@Value("${marvel.api.urlprincipal}")
 	private String url;
@@ -38,11 +35,12 @@ public class MarvelAPIClient {
 	@Value("${marvel.api.segmentObject}")
 	private String segmentObject;
 
-	public CharacterDataWrapper getCharacters() {
+	public CharacterDataWrapper getCharacterById(Integer idCharacter) {
 		UriComponentsBuilder builder = 	UriComponentsBuilder.fromOriginHeader(url)
 				.pathSegment(segmentVersion)
 				.pathSegment(segmentAcces)
 				.pathSegment(segmentObject)
+				.pathSegment(idCharacter.toString())
 				.queryParam(Const.TS_LABEL, Const.UNO)
 				.queryParam(Const.APIKEY_LABEL, apikey)
 				.queryParam(Const.HASH_LABEL, hash);
@@ -59,12 +57,11 @@ public class MarvelAPIClient {
 		return response;
 	}
 
-	public CharacterDataWrapper getCharacterById(Integer idCharacter) {
+	public CharacterDataWrapper getCharacters() {
 		UriComponentsBuilder builder = 	UriComponentsBuilder.fromOriginHeader(url)
 				.pathSegment(segmentVersion)
 				.pathSegment(segmentAcces)
 				.pathSegment(segmentObject)
-				.pathSegment(idCharacter.toString())
 				.queryParam(Const.TS_LABEL, Const.UNO)
 				.queryParam(Const.APIKEY_LABEL, apikey)
 				.queryParam(Const.HASH_LABEL, hash);

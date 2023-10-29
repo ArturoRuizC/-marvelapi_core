@@ -11,4 +11,6 @@ public class Const {
 	public static final String 		RESPONSE_LABEL = "Response: ";
 	public static final String 		SPACE = " ";
 	public static final String 		EMPTY = "";
+	public static final Integer		CERO = 0;
+	public static final String      STATUS_Ok = "Ok";
 }
